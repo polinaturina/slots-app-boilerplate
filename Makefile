@@ -30,3 +30,6 @@ csfixer:
 
 persist-doctor-table:
 	docker-compose run --rm app php bin/console app:create-doctor
+
+generate-new-migration:
+	docker-compose run --rm php bin/console doctrine:migrations:generate
