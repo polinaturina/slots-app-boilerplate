@@ -21,3 +21,9 @@ composer-update-linux:
 .PHONY: composer-update-macos
 composer-update-macos:
 	docker run --rm --interactive --tty --volume /run/host-services/ssh-auth.sock:/tmp/ssh-agent --volume ${PWD}:/app -e SSH_AUTH_SOCK=/tmp/ssh-agent composer:2 update --ignore-platform-reqs
+
+run-migrations:
+	docker-compose run --rm app php bin/console doctrine:migrations:migrate
+
+csfixer:
+	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
