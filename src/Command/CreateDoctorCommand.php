@@ -25,7 +25,7 @@ class CreateDoctorCommand extends Command
         parent::__construct();
     }
 
-    // TODO: Bug with id = 0
+    // TODO: Bug with id = 0, basically right now it's not correct entries of doctors in DB
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $elements = ($this->factory->createSupplierClient())->getDoctorArray();
