@@ -20,7 +20,7 @@ class SupplierClient
         $this->config = $config;
     }
 
-    public function getDoctors(): array
+    public function getDoctorArray(): array
     {
         $response = $this->httpClient->get(
             $this->getDoctorListEndpoint(),

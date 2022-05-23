@@ -27,3 +27,6 @@ run-migrations:
 
 csfixer:
 	tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src
+
+persist-doctor-table:
+	docker-compose run --rm app php bin/console app:create-doctor
