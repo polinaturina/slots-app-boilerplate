@@ -7,6 +7,7 @@ namespace App\Http;
 use App\Entity\Doctor;
 use App\Entity\DoctorCollection;
 
+// Todo: move to another folder
 class DoctorCollectionMapper
 {
     private const COLUMN_NAME_IN_DOCTOR_TABLE = 'name';

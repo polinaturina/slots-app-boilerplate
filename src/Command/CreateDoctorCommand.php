@@ -25,6 +25,7 @@ class CreateDoctorCommand extends Command
         parent::__construct();
     }
 
+    // TODO: Bug with id = 0
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $elements = ($this->factory->createSupplierClient())->getDoctorArray();
@@ -34,7 +35,7 @@ class CreateDoctorCommand extends Command
 
         /** @var Doctor $doctorItem */
         foreach ($doctorCollectionItems->getElements() as $doctorItem) {
-            if ($repository->findOneByName($doctorItem->getName()) !== null) {
+            if ($repository->findOneByID($doctorItem->getId()) !== null) {
                 $output->writeln(sprintf('Doctor %s already exists in the "doctor" table!', $doctorItem->getName()));
                 continue;
             }

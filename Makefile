@@ -33,3 +33,6 @@ persist-doctor-table:
 
 generate-new-migration:
 	docker-compose run --rm php bin/console doctrine:migrations:generate
+
+persist-slot-table:
+	docker-compose run --rm app php bin/console app:pull-doctor-slots

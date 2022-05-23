@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+// TODO: move to ValueObject folder
 class DoctorCollection
 {
     /**
