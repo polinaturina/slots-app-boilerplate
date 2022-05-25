@@ -26,6 +26,7 @@ class CreateSlotsCommand extends Command
         parent::__construct();
     }
 
+    // TODO: Can be executed only once - no protection from double entries
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $doctorRepository = new DoctorRepository($this->doctrin);

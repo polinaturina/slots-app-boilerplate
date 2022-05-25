@@ -9,7 +9,7 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method Slot|null find($id, $lockMode = null, $lockVersion = null)
  * @method Slot|null findOneBy(array $criteria, array $orderBy = null)
- * @method Slot[]    findAll()
+ * @method Slot[]   findAll()
  * @method Slot[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class SlotRepository extends ServiceEntityRepository
@@ -34,7 +34,6 @@ class SlotRepository extends ServiceEntityRepository
             ->andWhere('d.doctor_id = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
-            ;
+            ->getOneOrNullResult();
     }
 }

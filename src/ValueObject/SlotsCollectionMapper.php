@@ -13,7 +13,7 @@ class SlotsCollectionMapper
     private const COLUMN_DATE_FROM = 'start';
     private const COLUMN_DATE_TO = 'end';
 
-    public function map(array $elements, Doctor $doctor): SlotsCollection
+    public function map(array $elements, Doctor $doctor = null): SlotsCollection
     {
         $slotsCollection = new SlotsCollection();
 
@@ -21,7 +21,9 @@ class SlotsCollectionMapper
             $slot = new Slot();
             $slot->setDateFrom(new DateTime($element[self::COLUMN_DATE_FROM]));
             $slot->setDateTo(new DateTime($element[self::COLUMN_DATE_TO]));
-            $slot->setDoctorId($doctor->getId());
+            if (isset($doctor)) {
+                $slot->setDoctorId($doctor->getId());
+            }
             $slotsCollection->addSlot($slot);
         }
 
