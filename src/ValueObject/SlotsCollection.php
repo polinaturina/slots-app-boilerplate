@@ -20,4 +20,9 @@ final class SlotsCollection
     {
         return $this->slots;
     }
+
+    public function count(): int
+    {
+        return count($this->slots);
+    }
 }
