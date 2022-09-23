@@ -33,7 +33,8 @@
         "symfony/twig-pack": "*",
         "symfony/validator": "^5.3",
         "symfony/web-link": "^5.3",
-        "symfony/yaml": "^5.3"
+        "symfony/yaml": "^5.3",
+        "guzzlehttp/guzzle": "^7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",

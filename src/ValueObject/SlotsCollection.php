@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\ValueObject;
@@ -18,5 +19,10 @@ final class SlotsCollection
     public function getSlots(): array
     {
         return $this->slots;
+    }
+
+    public function count(): int
+    {
+        return count($this->slots);
     }
 }
